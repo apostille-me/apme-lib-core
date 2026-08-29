@@ -1,0 +1,39 @@
+{
+  "format": 1,
+  "engines": {
+    "postgresql": {
+      "minimumVersion": "16",
+      "status": "supported-by-dpm"
+    },
+    "cockroachdb": {
+      "minimumVersion": "25.2",
+      "status": "requires-live-dpm-verification"
+    }
+  },
+  "destructiveChanges": {
+    "generationConsent": "required",
+    "executionConsent": "required",
+    "reviewedPlanChecksum": "required"
+  },
+  "startupMigrations": "forbidden",
+  "productionMigrator": {
+    "mode": "serialized-one-shot-job",
+    "databaseRole": "apme__migrator",
+    "fencing": "fiducia-lease-required"
+  },
+  "runtimeRoles": {
+    "api": "apme__api_rw",
+    "web": "apme__web_ro",
+    "webState": "apme__web_state_rw"
+  },
+  "legacyReconciliation": [
+    {
+      "path": "migrations/declarative/legacy/0001_initial.sql",
+      "repo": "apostille-me/apme-interfaces",
+      "revision": "75896f9464f2fdbdec557411a642483105cfabd1",
+      "sourcePath": "sql/001_initial.sql",
+      "sha256": "f85589a52d40b1e9f60404cb905a3a4d4e3b0b2db3b61e2d7d3fadc277aefb34",
+      "reason": "Superseded unprefixed single-tenant cases table; retained for provenance but excluded from desired state."
+    }
+  ]
+}

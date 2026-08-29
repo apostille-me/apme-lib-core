@@ -1,0 +1,31 @@
+{
+  "format": 1,
+  "interfaces": {
+    "repository": "apostille-me/apme-interfaces",
+    "revision": "75896f9464f2fdbdec557411a642483105cfabd1"
+  },
+  "policy": "Wire contracts never become implicit database contracts; each mapping is explicit and one-way.",
+  "status": "bootstrap-mapping",
+  "mappings": [
+    {
+      "wireType": "Case",
+      "table": "apme_cases",
+      "direction": "explicit-adapter-required"
+    },
+    {
+      "wireType": "CaseEvent",
+      "table": "apme_case_events",
+      "direction": "explicit-adapter-required"
+    },
+    {
+      "wireType": "TenantMembership",
+      "table": "apme_tenant_memberships",
+      "direction": "explicit-adapter-required"
+    },
+    {
+      "wireType": "AuditReceipt",
+      "table": "apme_audit_receipts",
+      "direction": "explicit-adapter-required"
+    }
+  ]
+}

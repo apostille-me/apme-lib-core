@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/apostille-me/apme-lib-core/blob/main/contracts/database/schema.json",
+  "title": "Apostille Me persistence inventory contract",
+  "description": "Bootstrap JSON Schema for the canonical SQL inventory. Column-level mappings are promoted only after semantic catalog reconciliation and generated-adapter parity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "table",
+    "values"
+  ],
+  "properties": {
+    "table": {
+      "type": "string",
+      "enum": [
+        "apme_audit_receipts",
+        "apme_case_appointments",
+        "apme_case_create_commands",
+        "apme_case_deadlines",
+        "apme_case_events",
+        "apme_case_object_commands",
+        "apme_case_transition_commands",
+        "apme_cases",
+        "apme_tenant_audit_heads",
+        "apme_tenant_memberships",
+        "apme_tenants"
+      ]
+    },
+    "values": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "x-lib-core": {
+    "format": 1,
+    "product": "apme",
+    "authority": "contracts/database/desired.sql",
+    "schemaPhase": "inventory-bootstrap",
+    "tables": [
+      "apme_audit_receipts",
+      "apme_case_appointments",
+      "apme_case_create_commands",
+      "apme_case_deadlines",
+      "apme_case_events",
+      "apme_case_object_commands",
+      "apme_case_transition_commands",
+      "apme_cases",
+      "apme_tenant_audit_heads",
+      "apme_tenant_memberships",
+      "apme_tenants"
+    ],
+    "functions": [
+      "apme_append_audit",
+      "apme_apply_retention",
+      "apme_create_case",
+      "apme_hash_audit_receipt",
+      "apme_hash_case_event",
+      "apme_rotate_case_object",
+      "apme_transition_case",
+      "apme_verify_case_audit",
+      "apme_verify_tenant_audit"
+    ],
+    "capabilityProfiles": [
+      "contracts",
+      "read",
+      "write",
+      "migrator"
+    ],
+    "generatedAdapters": [
+      "rust-seaorm",
+      "typescript-drizzle",
+      "typescript-prisma",
+      "typescript-typeorm",
+      "go-ent",
+      "dart-drift"
+    ]
+  }
+}
