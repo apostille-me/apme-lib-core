@@ -23,3 +23,10 @@ target
 # Local temporary directories and repository-owned worktrees
 tmp/
 temp/
+# Local agent/package/runtime state
+.ores/
+.env
+.env.*
+.vendor/
+.zed/
+.zed-pack/

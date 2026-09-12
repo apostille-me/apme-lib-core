@@ -1,0 +1,16 @@
+{
+  "format": 1,
+  "canonicalRepository": "apostille-me/apme-lib-core",
+  "sourceManifestSha256": "03d23ab6519f26e48d83c517ee5284b309912fe71bf1c2256122f255e9218895",
+  "persistenceSchemaSha256": "91c806bb3b37403b2f552e5697840d0c64a47b31a77275abeb3c7fb409bda534",
+  "desiredSqlSha256": "17187d503fb3588d05cc97d578ffc1ecf43c0fd63d17648479248fadd8963e5c",
+  "sources": [
+    {
+      "path": "migrations/declarative/0002_tenant_case_persistence.sql",
+      "repository": "apostille-me/apme-interfaces",
+      "revision": "75896f9464f2fdbdec557411a642483105cfabd1",
+      "sourcePath": "sql/002_tenant_case_persistence.sql",
+      "sha256": "063632d50fccf33aebdffe282f03babff1182ffe01b3b519cec165e6dcb97321"
+    }
+  ]
+}
