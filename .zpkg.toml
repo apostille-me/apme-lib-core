@@ -14,6 +14,7 @@ url = "https://github.com/apostille-me/apme-lib-core"
 [dependencies]
 "apostille-me/apme-interfaces" = "^0.1.0"
 "oresoftware/k8s-libs-and-shared-defs" = "^0.1.0"
+"oresoftware/next-loggers" = "^0.1.0"
 "declarative-migrations/declarative-postgres-migrate" = "^0.3.2"
 
 [install]
